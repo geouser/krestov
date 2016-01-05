@@ -93,7 +93,7 @@ jQuery(document).ready(function($) {
 
 // slick slider 
   $(function(){
-    $('.text-slider').slick({
+    $('.text-slider, .infoSlider').slick({
       dots: true,
       arrows: false
     });
