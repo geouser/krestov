@@ -625,11 +625,11 @@ text-align: center;
     text-align: center;
     padding: 25px;
     opacity: 0;
-    -webkit-transition: opacity 1.2s, bottom 0s;
-       -moz-transition: opacity 1.2s, bottom 0s;
-        -ms-transition: opacity 1.2s, bottom 0s;
-         -o-transition: opacity 1.2s, bottom 0s;
-            transition: opacity 1.2s, bottom 0s;
+    -webkit-transition: opacity 1.3s, bottom 0s;
+       -moz-transition: opacity 1.3s, bottom 0s;
+        -ms-transition: opacity 1.3s, bottom 0s;
+         -o-transition: opacity 1.3s, bottom 0s;
+            transition: opacity 1.3s, bottom 0s;
 }
 .accardeon .box:hover p {
     bottom: 0;
