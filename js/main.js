@@ -74,7 +74,7 @@ jQuery(document).ready(function($) {
     fixedBgPos: true,
 
     overflowY: 'auto',
-    modal: true,
+    modal: false,
 
     closeBtnInside: true,
     preloader: false,
@@ -123,7 +123,19 @@ jQuery(document).ready(function($) {
   })
 
 
+// floor information functions 
+  $('.flat_area').on('click', function(event) {
+    event.preventDefault();
+    $(this).attr('class', 'active flat_area').siblings().attr('class', 'flat_area');
+    var label = $(this).parent().parent().siblings('.top-label');
+    var flat = {
+      flNumber: $(this).attr('fl-number'),
+      flArea: $(this).attr('fl-area')
+    }
 
+    label.find('.fl_number').text(flat.flNumber);
+    label.find('.fl_area').text(flat.flArea);
+  }); // end click event function
 
 
 }); // end document ready function

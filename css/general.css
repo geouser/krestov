@@ -487,6 +487,7 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
 .info_block:after                           {   width: 100%;
                                                 height: 90%;
                                                 position: absolute;
+                                                display: block;
                                                 content: '';
                                                 top: 5%;
                                                 background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAMAAADXT/YiAAAABlBMVEUAAAAAAAClZ7nPAAAAAnRSTlMAZtJCCVUAAAAWSURBVHgBY2BkYGSEEAjAiEkgALE6AARMABVTqW0wAAAAAElFTkSuQmCC);
@@ -512,7 +513,8 @@ button.next_slide                           { position: absolute;
                                                 background-size: 100% 100%;
                                                 background-position: 50% 50%;
                                                 border: none;
-                                                background-color: transparent;}
+                                                background-color: transparent;
+                                                z-index: 10;}
 button.next_slide:after                     { content: '';
                                                 width: 360px;
                                                 height: 14px;
@@ -696,6 +698,106 @@ background-repeat: repeat;}
 .slideInfo.quote:after {width: 30px; height: 25px;}
 .slideInfo p {font: 16px/24px 'open_sanscondensed_light_italic';}
 }
+
+/*---------------------------------------------------------------------
+HOUSE slide
+---------------------------------------------------------------------*/
+.flats                          { overflow: hidden;}
+.flats .wrapper               { position: relative;
+                                padding-top: 65px;}
+.flats .logo                  { padding-top: 40px; position: relative; z-index: 2;}
+.flats .button                { float: right; margin-top: 20px; position: relative; z-index: 2;}
+.flats .info_block            { z-index: 2; height: auto; width: auto; left: 5%; right: 5%; text-align: justify;}
+.flats .info_block img        { display: inline-block; vertical-align: middle; width: 33%;}
+
+
+.tip .arrow                     { background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAoCAMAAAA8EaFZAAABAlBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4RaCNAAAAVXRSTlMAAAECAwQFBgcICQsMDQ4PERITFBUYGRocISIjKywtMTM0NjhAR0lKTE1RVV5fYWZrbXBxe36AgoOGkZWYm52vtLW3ucHDyMrOz9HT1dnc3uLm7/X5C6hVywAAAPJJREFUeAF1zNlW6kAUhOHa3U1yctSoYDDOGpyRoOKMojiIiLPs938Vl8sraOq//VYVRAwGk78gYpmYAhFEIZOUbewik3BpjEghKxFBNSZiqgmTlXUiyHaISLlhiJi2JYLzOSKylzOZvrNE8JAw2bpiEvUmieCowWSiHxHB8SWTqf4CEdReLRHb2SeCGV0mgg0tEcHJe0QE1x0HAOOxJ+7l8Zeyj2BY4LrPIeB01xME918xsKaBJ3AtrUCeDnwBtvXM/NPyCEH61itu3pgRAnuoLa0PS5rntUpSV9VVDErxonnabN92P/U79d6MEbH/Z+ftD5LXGBthV1ydAAAAAElFTkSuQmCC);
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    width: 25px;
+                                    height: 40px;}
+.tip                            { position: absolute;
+                                    top: 25%;
+                                    left: 23%;
+                                    text-align: center;}
+
+
+
+
+
+#house                        { width: 100%; height: auto;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                overflow: hidden;
+                                z-index: 1;}
+#house img                  { width: 100%; height: auto;}
+
+#house svg                    { width: 100%;
+                                position: absolute;
+                                width: 100%;
+                                height: auto;
+                                top: 0;
+                                left: 0;
+                                right: 0;}
+#house svg .floor           { cursor: pointer;
+                                opacity: 0;
+                                -webkit-transition: all 0.3s ease;
+                                     -o-transition: all 0.3s ease;
+                                        transition: all 0.3s ease;}
+#house svg .floor:hover     { opacity: 1;}
+
+
+
+@media (max-width: 1500px) {
+    .flats .wrapper             { padding-top: 50px;}
+    .flats .logo                { padding-top: 20px;}
+}
+@media (max-height: 800px) {
+    .flats .wrapper             { padding-top: 50px;}
+}
+
+
+
+
+/*---------------------------------------------------------------------
+Modal popup
+---------------------------------------------------------------------*/
+.popup                          { width: 60%;
+                                    height: auto;
+                                    padding: 15px;
+                                    display: block;
+                                    margin: 0 auto;
+                                    text-align: center;
+                                    background-color: #fff;}
+.popup .top-label               { display: block; display: table; width: 100%; margin-bottom: 50px;}
+.popup .top-label div           { display: table-cell; width: 33.33%; text-align: center; font-size: 30px;}
+.popup .top-label div:nth-child(1) {text-align: left;}
+
+.popup .map_holder              { width: 90%; display: inline-block; position: relative; height: auto;}
+.popup .map_holder img          { width: 100%; height: auto;}
+.mfp-close-btn-in .mfp-close    { color: transparent;
+                                    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSIzNSIgdmlld0JveD0iMCAwIDYxMiA2MTIiPjxwYXRoIGZpbGw9IiMwMDAwMDAiIGQ9Ik02MTIgMzYuMDA0TDU3Ni41Mi42MDQgMzA2IDI3MC42MDcgMzUuNDc4LjYwMyAwIDM2LjAwM2wyNzAuNTIyIDI3MC4wMDhMMCA1NzUuOTk4bDM1LjQ3OCAzNS40TDMwNiAzNDEuNDFsMjcwLjUyIDI2OS45ODcgMzUuNDgtMzUuNEwzNDEuNDYgMzA2LjAxIi8+PC9zdmc+);
+                                    background-position: 50% 50%;
+                                    background-size: 40% 40%;
+                                    background-repeat: no-repeat;}
+.popup .map_holder svg          { position: absolute;   
+                                    top:0;
+                                    left: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    width: 100%;
+                                    height: 100%;}
+.popup .map_holder svg polygon  { cursor: pointer;
+                                    -webkit-transition: all 0.3s ease;
+                                         -o-transition: all 0.3s ease;
+                                            transition: all 0.3s ease;
+                                    opacity: 0;}
+.popup .map_holder svg polygon:hover,
+.popup .map_holder svg polygon.active {opacity: 0.7;}
+
+
+
 /*---------------------------------------------------------------------
 Contacts
 ---------------------------------------------------------------------*/
