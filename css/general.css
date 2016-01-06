@@ -306,6 +306,8 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
 }
 
 @media (max-width: 1200px) {
+    .onepage-wrapper .section   {  border-bottom: 4px solid #fff;}
+
     .navigation                 { height: 50px; padding: 0 3%;}
     .navigation .wrapper        { width: 100%;}
     
@@ -737,6 +739,8 @@ text-align: center;
     .about .bottom_line                     { height: 130px; padding-top: 30px;}
 }
 @media (max-width: 900px) {
+    .about                                  { height: auto !important;}
+
     .about .accardeon                       { display: block; height: auto;}
     .about                                  { text-align: center;}
     .about .text-slider .slide              { font-size: 25px; line-height: 36px;}
@@ -789,7 +793,7 @@ text-align: center;
 Location
 ---------------------------------------------------------------------*/
 .infoSlider {margin-bottom: 50px;}
-.location .infoBlock {position: absolute; left: 0; top: 0; z-index: 100; }
+.location .infoBlock {position: absolute; left: 0; top: 0; z-index: 10; }
 .infoBlock p {font-size: 26px; margin-bottom: 20px; line-height: 36px;}
 .slideInfo   {background-color: #1E1708; padding: 30px; color: #fff; position: relative}
 .slideInfo p {font: 18px/26px 'open_sanscondensed_light_italic';}
@@ -1083,9 +1087,12 @@ p.contactUs          {margin: 5px 0 10px 0;}
     #contacts .feedback,
     .infoBlock              { margin-left: 0; width: 40%;}
 
-    #contacts, .location              {    height: auto !important;}
+    #contacts             {    height: auto !important;}
+    .location             {   height: 700px !important;}
+    #contacts .feedback  {    position: static !important; height: auto;}
+
     #contacts .feedback,
-    .infoBlock             {    position: static !important; height: auto;}
+.infoBlock {padding-top: 40px;}
 
 }
 @media (max-width: 900px)                             { 
@@ -1102,6 +1109,7 @@ p.contactUs          {margin: 5px 0 10px 0;}
     .popupForm             {   padding: 30px 10px;}
     .addressInfo          {font-size: 20px;} 
 }
+
 
 
 
@@ -1129,3 +1137,12 @@ p.contactUs          {margin: 5px 0 10px 0;}
 a[href^="http://maps.google.com/maps"]  {    display: none !important }
 a[href^="https://maps.google.com/maps"] {    display: none !important }
 .gmnoprint a, .gmnoprint span, .gm-style-cc {    display: none }
+
+
+@media (max-width: 1200px) {
+        .map_block                              { position: absolute; left: 0; top: 0;}
+}
+@media (max-width: 700px) {
+        .location                               { height: auto !important;}
+        .map_block                              { display: none;}
+}

@@ -61,18 +61,7 @@ jQuery(document).ready(function($) {
     }); 
   }; // end navigate
 
-  Navigate();
-
-
-// Top menu functions 
-  $(function(){
-    $('.mobile_menu').on('click', function(event) {
-      event.preventDefault();
-      $('.navigation').toggleClass('active');
-      $(this).toggleClass('active').siblings('ul').toggleClass('active');
-    });
-  });
-
+  //Navigate();
 
 
 
@@ -165,7 +154,7 @@ function initialize() {
     var mapCenter = {lat: 59.958043, lng: 30.66625};
 
     var mapOptions = {
-      zoom: 16,
+      zoom: 15,
       //draggable: false,
       disableDefaultUI: true,
       scrollwheel: false,
@@ -176,7 +165,7 @@ function initialize() {
     // Display a map on the page
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     map.setTilt(45);
-    map.panBy(-400, 0);                     
+    map.panBy(-350, 0);                     
     // Display multiple markers on a map
     var infoWindow = new google.maps.InfoWindow(), marker, i;
     
@@ -214,8 +203,14 @@ function initialize() {
   });
 }
 
-//initialize();
-
+if ($(window).width() > 700) {
+  initialize()
+  $(window).resize(function(){
+      if ($(window).width() > 700) {
+        initialize()
+      }
+  }); 
+}
 
 
 
