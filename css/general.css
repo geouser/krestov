@@ -720,7 +720,7 @@ text-align: center;
 Location
 ---------------------------------------------------------------------*/
 .infoSlider {margin-bottom: 50px;}
-.location .infoBlock {position: absolute; left: 0; top: 0; z-index: 100; }
+.location .infoBlock {position: absolute; left: 0; top: 0; z-index: 10; }
 .infoBlock p {font-size: 26px; margin-bottom: 20px; line-height: 36px;}
 .slideInfo   {background-color: #1E1708; padding: 30px; color: #fff; position: relative}
 .slideInfo p {font: 18px/26px 'open_sanscondensed_light_italic';}
