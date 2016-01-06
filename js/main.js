@@ -61,7 +61,18 @@ jQuery(document).ready(function($) {
     }); 
   }; // end navigate
 
-  //Navigate();
+  Navigate();
+
+
+// Top menu functions 
+  $(function(){
+    $('.mobile_menu').on('click', function(event) {
+      event.preventDefault();
+      $('.navigation').toggleClass('active');
+      $(this).toggleClass('active').siblings('ul').toggleClass('active');
+    });
+  });
+
 
 
 
@@ -200,7 +211,7 @@ function initialize() {
 }
 
 
-initialize();
+//initialize();
 
 
 
