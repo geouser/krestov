@@ -105,7 +105,8 @@ jQuery(document).ready(function($) {
   $(function(){
     $('.text-slider, .infoSlider').slick({
       dots: true,
-      arrows: false
+      arrows: false,
+      adaptiveHeight: true
     });
   });
 
@@ -122,14 +123,16 @@ jQuery(document).ready(function($) {
 
 // accardeon custom functions 
   $(function(){
-    $('.box').on('mouseenter touch', function(event) {
-      event.preventDefault();
-      $(this).addClass('active').siblings().removeClass('active').addClass('disabled')
-    });
-    $('.box').on('mouseleave', function(event) {
-      event.preventDefault();
-      $(this).removeClass('active').siblings().removeClass('active disabled');
-    });
+    if ($(window).width() > 500) {
+      $('.box').on('mouseenter touch', function(event) {
+        event.preventDefault();
+        $(this).addClass('active').siblings().removeClass('active').addClass('disabled')
+      });
+      $('.box').on('mouseleave', function(event) {
+        event.preventDefault();
+        $(this).removeClass('active').siblings().removeClass('active disabled');
+      });  
+    }
   })
 
 
