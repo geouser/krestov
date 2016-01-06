@@ -1,0 +1,63 @@
+
+// Multiple Markers
+var markers = [
+            ['San Francisco: Power Outage', 59.955543, 30.66945,'images/y_marker.png'],
+            ['Sausalito', 59.956343, 30.66065, 'images/y_marker.png'],
+            ['Sacramento', 59.957143, 30.66285,'images/y_marker.png']
+        ];
+
+function initialize() {
+    var map;
+    var mapCenter = {lat: 59.958043, lng: 30.66625};
+
+    var mapOptions = {
+      zoom: 16,
+      //draggable: false,
+      disableDefaultUI: true,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      center: mapCenter
+    };
+                    
+    // Display a map on the page
+    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    map.setTilt(45);
+    map.panBy(-400, 0);                     
+    // Display multiple markers on a map
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
+    
+    // Loop through our array of markers & place each one on the map  
+    function displayM() { 
+      for( i = 0; i < markers.length; i++ ) {
+          var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+          marker = new google.maps.Marker({
+              position: position,
+              map: map,
+              title: markers[i][0],
+              icon: markers[i][3]
+          });
+      }
+          var markerImage = new google.maps.MarkerImage('images/mainMarker.png');
+          var markerMain = new google.maps.Marker({
+            icon: markerImage,
+            position: mapCenter, 
+            map: map,
+            title: "HOVARD"
+          });
+
+    };
+
+    displayM();
+
+    $(".infoSlider.-image").on("afterChange", function(slick, currentSlide){
+      var index = currentSlide.currentSlide;
+      for ( a = 0; a < markers.length; a++ ) {
+        markers[a][3] = '';
+        markers[a][3] = 'images/y_marker.png';
+        markers[index][3] = 'images/d_marker.png';
+      }
+      displayM();
+  });
+}
+
+initialize();

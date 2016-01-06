@@ -306,6 +306,8 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
 }
 
 @media (max-width: 1200px) {
+    .onepage-wrapper .section   {  border-bottom: 4px solid #fff;}
+
     .navigation                 { height: 50px; padding: 0 3%;}
     .navigation .wrapper        { width: 100%;}
     
@@ -701,7 +703,7 @@ text-align: center;
     .accardeon .box p                       { font-size: 20px;}
 }
 @media (max-width: 900px) {
-    #about                                  { height: auto;}
+    .about                                  { height: auto !important;}
     .about .accardeon                       { display: block; height: auto;}
     .accardeon .box                         { display: block; float: left; width: 50% !important; height: 200px;}
     .about .bottom_line                     { height: 120px;}
@@ -1012,9 +1014,12 @@ p.contactUs          {margin: 5px 0 10px 0;}
     #contacts .feedback,
     .infoBlock              { margin-left: 0; width: 40%;}
 
-    #contacts, .location              {    height: auto !important;}
+    #contacts             {    height: auto !important;}
+    .location             {   height: 700px !important;}
+    #contacts .feedback  {    position: static !important; height: auto;}
+
     #contacts .feedback,
-    .infoBlock             {    position: static !important; height: auto;}
+.infoBlock {padding-top: 40px;}
 
 }
 @media (max-width: 900px)                             { 
@@ -1031,6 +1036,7 @@ p.contactUs          {margin: 5px 0 10px 0;}
     .popupForm             {   padding: 30px 10px;}
     .addressInfo          {font-size: 20px;} 
 }
+
 
 
 
@@ -1058,3 +1064,12 @@ p.contactUs          {margin: 5px 0 10px 0;}
 a[href^="http://maps.google.com/maps"]  {    display: none !important }
 a[href^="https://maps.google.com/maps"] {    display: none !important }
 .gmnoprint a, .gmnoprint span, .gm-style-cc {    display: none }
+
+
+@media (max-width: 1200px) {
+        .map_block                              { position: absolute; left: 0; top: 0;}
+}
+@media (max-width: 700px) {
+        .location                               { height: auto !important;}
+        .map_block                              { display: none;}
+}
