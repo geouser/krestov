@@ -212,7 +212,6 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
 
 
 
-
 /*---------------------------------------------------------------*/
 /*------------------------- Navigation --------------------------*/
 /*---------------------------------------------------------------*/
@@ -391,7 +390,9 @@ body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
 .offer .button                              { float: right; margin-top: 20px;}
 
 
-
+@media (max-width: 400px) {
+.logo p  {font-size: 18px !important;}
+}
 
 .button                                     {   padding: 0 15px;
                                                 height: 45px;
@@ -619,7 +620,7 @@ text-align: center;
 .accardeon .box:hover h3 {opacity: 0;}
 .accardeon .box p {
     position: absolute;
-    bottom: -100%;
+    bottom: 100%;
     display: block;
     background-color: rgba(0,0,0, .9);
     font-size: 26px;
@@ -648,6 +649,13 @@ text-align: center;
 
     .accardeon .box h3                      { font-size: 16px;}
     .accardeon .box p                       { font-size: 20px;}
+}
+@media (max-width: 900px) {
+    #about                                  { height: auto;}
+    .about .accardeon                       { display: block; height: auto;}
+    .accardeon .box                         { display: block; float: left; width: 50% !important; height: 200px;}
+    .about .bottom_line                     { height: 120px;}
+    .about .bottom_line .button             { margin-top: 20px;}
 }
 @media (max-height: 800px) {
     .about .top_line                        { padding-top: 50px;}
@@ -948,34 +956,30 @@ p.contactUs          {margin: 5px 0 10px 0;}
     .contactForm button                     {margin-bottom: 20px;}
 }
 @media (max-width: 1200px)                             { 
-    
-    p.contactUs           {}
-    .addressInfo          {font-size: 16px;}
-    #contacts p span      {font-size: 20px;}
+    .addressInfo          {font-size: 24px;}
     .tel a                {font-size: 36px;}
+    #contacts .tel a span {font-size: 36px;}
     #contacts .feedback,
     .infoBlock              { margin-left: 0; width: 40%;}
 
+    #contacts, .location              {    height: auto !important;}
+    #contacts .feedback,
+    .infoBlock             {    position: static !important; height: auto;}
+
 }
 @media (max-width: 900px)                             { 
-    #contacts .inner-block {    padding-right: 3% }
-    #contacts footer       {    bottom: 0 }
-    #contacts address      {    font-size: 12px }
-    
     #contacts .feedback,
     .infoBlock              { margin-left: 0; width: 50%;}
 }
 @media (max-width: 700px)                             { 
     #contacts .feedback,
-    .infoBlock       {    width: 100% }
-    #contacts              {    height: auto;}
-    .contactForm input     {    font-size: 16px;}
+    .infoBlock             {    width: 100%; position: static !important; height: auto;}
+    .contactForm input     {    font-size: 18px;}
 }
 @media (max-width: 400px)                             { 
-    #contacts .inner-block {    padding-right: 5px }
     #contacts .form_layer  {    width: 95%;}
-    .contactForm input   {   margin-right: 4%;}
-    .popupForm           {   padding: 30px 10px;}
+    .popupForm             {   padding: 30px 10px;}
+    .addressInfo          {font-size: 20px;} 
 }
 
 
