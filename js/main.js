@@ -149,6 +149,7 @@ jQuery(document).ready(function($) {
   }); // end click event function
 
 
+
 // Multiple Markers
 var markers = [
             ['San Francisco: Power Outage', 59.955543, 30.66945,'images/y_marker.png'],
@@ -210,8 +211,8 @@ function initialize() {
   });
 }
 
-
 //initialize();
+
 
 
 
