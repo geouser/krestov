@@ -98,7 +98,14 @@ jQuery(document).ready(function($) {
       adaptiveHeight: true
     });
   });
-
+// slick slider 
+  $(function openFloorSlider(){
+    $('.flatSlider').slick({
+      dots: false,
+      arrows: false,
+      fade: true
+    });
+  });
 
 
 // perfect scrollbar 
@@ -138,8 +145,15 @@ jQuery(document).ready(function($) {
 
     label.find('.fl_number').text(flat.flNumber);
     label.find('.fl_area').text(flat.flArea);
+    $('.flatSlider').slick('slickGoTo', flat.flNumber);
+
   }); // end click event function
 
+
+  $('.backTo').on('click', function() {
+    $('.flatSlider').slick('slickGoTo', 0);
+
+  }); // end click event function
 
 
 // Multiple Markers
@@ -203,14 +217,25 @@ function initialize() {
   });
 }
 
-if ($(window).width() > 700) {
-  initialize()
-  $(window).resize(function(){
-      if ($(window).width() > 700) {
-        initialize()
-      }
-  }); 
-}
+
+
+$('.gallery-link').on('click', function () {
+    $(this).next().magnificPopup('open');
+});
+
+$('.gallery').each(function () {
+    $(this).magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true
+        },
+        fixedContentPos: false,
+        titleSrc: 'title'
+    });
+});
+
 
 
 
