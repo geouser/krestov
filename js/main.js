@@ -175,28 +175,69 @@ jQuery(document).ready(function($) {
 
 // Multiple Markers
 var markers = [
-            ['San Francisco: Power Outage', 59.955543, 30.66945,'images/y_marker.png'],
-            ['Sausalito', 59.956343, 30.66065, 'images/y_marker.png'],
-            ['Sacramento', 59.957143, 30.66285,'images/y_marker.png']
+            ['San Francisco: Power Outage', 59.980864, 30.288129,'images/d_marker.png'],
+            ['Sausalito', 59.977727, 30.274021, 'images/y_marker.png'],
+            ['Sausalito', 59.976774, 30.290372, 'images/y_marker.png'],
+            ['Sausalito', 59.971719, 30.293076, 'images/y_marker.png'],
+            ['Sausalito', 59.968954, 30.283924, 'images/y_marker.png'],
+            ['Sausalito', 59.973198, 30.273716, 'images/y_marker.png'],
+            ['Sausalito', 59.979285, 30.270236, 'images/y_marker.png'],
+            ['Sausalito', 59.982566, 30.289097, 'images/y_marker.png'],
+            ['Sacramento', 59.969995, 30.270090,'images/y_marker.png']
         ];
 
 function initialize() {
     var map;
-    var mapCenter = {lat: 59.958043, lng: 30.66625};
+    var mapCenter = {lat: 59.975987, lng: 30.283194};
 
     var mapOptions = {
-      zoom: 15,
+      zoom: 14,
       //draggable: false,
       disableDefaultUI: true,
       scrollwheel: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       center: mapCenter
     };
+
+     if ($(window).width() > 1200) {
+       var mapOptions = {
+        zoom: 15,
+        //draggable: false,
+        disableDefaultUI: true,
+        scrollwheel: false,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        center: mapCenter
+      };
+    }
+
+    google.maps.event.addDomListener(window, "resize", function() {
+     var center = map.getCenter();
+     google.maps.event.trigger(map, "resize");
+     map.setCenter(center); 
+    });
+    
+
+
                     
     // Display a map on the page
     map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
     map.setTilt(45);
-    map.panBy(-350, 0);                     
+
+     if ($(window).width() > 1300) {
+      map.panBy(-350, 0); 
+    }
+    if ($(window).width() < 1300) {
+      map.panBy(-250, 0); 
+    } 
+    if  ($(window).width() < 1200) {
+      map.panBy(-50, 0);
+    }
+    if  ($(window).width() < 1000) {
+      map.panBy(50, 0);
+    } 
+    if  ($(window).width() < 800) {
+      map.panBy(70, 0);
+    }                    
     // Display multiple markers on a map
     var infoWindow = new google.maps.InfoWindow(), marker, i;
     
@@ -234,6 +275,8 @@ function initialize() {
   });
 }
 
+    
+initialize();
 
 
 $('.gallery-link').on('click', function () {
