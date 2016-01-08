@@ -883,17 +883,66 @@ HOUSE slide
 #house svg .floor:hover     { opacity: 1;}
 
 
-
-@media (max-width: 1500px) {
-    .flats .wrapper             { padding-top: 50px;}
-    .flats .logo                { padding-top: 20px;}
-}
 @media (max-height: 800px) {
     .flats .wrapper             { padding-top: 50px;}
 }
 
 
+@media (max-width: 1500px) {
+    .flats .wrapper             { padding-top: 50px;}
+    .flats .logo                { padding-top: 20px;}
+    .flats .info_block          { left: auto; right: 0; text-align: center; width: auto; height: auto; margin-top: -140px; top: 50%; bottom: auto;}
+    .flats .info_block:before,
+    .flats .info_block:after    { display: none;}
+    .flats .info_block img      { width: auto; height: 110px; display: block; margin: 4px 0;}
+}
+@media (max-width: 1200px) {
+    .onepage-wrapper .section.flats { height: 600px;}
+    #house                          { width: 120%; left: -15%; right: -5%; top: -15%;}
+    .tip                            { display: none;}
+    .flats .wrapper                 { padding-top: 0;}
+}
+@media (max-width: 1000px) {
+    #house                          { top: 0%;}
+}
+@media (max-width: 900px) {
+    .onepage-wrapper .section.flats { height: 650px;}
+    #house                          { top: 0%; width: 140%; left: -30%; right: -10%;}
+}
+@media (max-width: 800px) {
+    .onepage-wrapper .section.flats { height: 550px;} 
+}
+@media (max-width: 720px) {
+    .flats .info_block              { position: absolute; padding: 1px 5px; margin-top: -140px;}
+    .flats .info_block img          { width: 110px; height: auto;}
 
+    #house                          {width: 170%; left: -47%; right: -23%;}
+}
+
+@media (max-width: 700px) {
+    .flats .logo                    { display: none;}
+    .tip                            { display: block; top: 5%; left: 40%;}
+    .flats .button                  { display: inline-block; position: absolute; left: 50%; margin-left: -120px; bottom: 60px;}
+    .flats .wrapper                 { text-align: center;}
+}
+
+@media (max-width: 600px) {
+    #house                          { width: 200%; left: -65%; right: -25%;}
+}
+
+@media (max-width: 500px) {
+    #house                          { width: 220%; left: -70%; right: -40%;}
+}
+
+@media (max-width: 400px) {
+    #house                          { width: 260%; left: -90%; right: -70%;}
+    .flats .info_block img          { width: 85px;}
+}
+
+@media (max-width: 370px) {
+    .onepage-wrapper .section.flats { height: 500px;}
+    .tip                            { top: 3%; left: 35%;}
+}
 
 /*---------------------------------------------------------------------
 Modal popup
