@@ -89,6 +89,32 @@ jQuery(document).ready(function($) {
   });
 
 
+// magnific popup
+  $('.floor.magnific').magnificPopup({
+    type: 'inline',
+
+    fixedContentPos: false,
+    fixedBgPos: true,
+
+    overflowY: 'auto',
+    modal: false,
+
+    closeBtnInside: true,
+    preloader: false,
+    
+    midClick: true,
+    removalDelay: 300,
+    mainClass: 'my-mfp-slide-bottom',
+    callbacks: {
+    open: function() {
+      $('.flatSlider').slick({
+        dots: false,
+        arrows: false,
+        fade: true
+      });
+    }}
+  });
+
 
 // slick slider 
   $(function(){
@@ -98,15 +124,6 @@ jQuery(document).ready(function($) {
       adaptiveHeight: true
     });
   });
-// slick slider 
-  $(function openFloorSlider(){
-    $('.flatSlider').slick({
-      dots: false,
-      arrows: false,
-      fade: true
-    });
-  });
-
 
 // perfect scrollbar 
   $(function() {
