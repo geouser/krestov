@@ -32,7 +32,7 @@ $('body').delay(2000).css('opacity', '1');
 
   $('.next_slide').on('click', function(event) {
     event.preventDefault();
-    $('.one_page').moveDown();
+    $(".fullpage").moveDown();
   });
 
 
@@ -57,15 +57,26 @@ $('body').delay(2000).css('opacity', '1');
       if ( $(window).width() >= responsiveValue) {
         $('.nav a').removeClass('active');
         $(this).addClass('active');
-        $('.one_page').moveTo( $(this).attr('index') );
+        $(".fullpage").moveTo( $(this).attr('index') );
       }
 
     }); 
   }; // end navigate
 
-  //Navigate();
+  Navigate();
 
 
+
+// Top menu functions 
+  $(function(){
+    $('.mobile_menu').on('click', function(event) {
+      event.preventDefault();
+      $('.navigation').toggleClass('active');
+      $(this).toggleClass('active').siblings('ul').toggleClass('active');
+    });
+  });
+
+  
 
 // magnific popup
   $('.magnific').magnificPopup({
@@ -153,7 +164,7 @@ $('body').delay(2000).css('opacity', '1');
 
 
 // floor information functions 
-  $('.flat_area').on('click', function(event) {
+  $('.flat_area').on('mouseenter touch', function(event) {
     event.preventDefault();
     $(this).attr('class', 'active flat_area').siblings().attr('class', 'flat_area');
     var label = $(this).parent().parent().siblings('.top-label');
@@ -164,9 +175,17 @@ $('body').delay(2000).css('opacity', '1');
 
     label.find('.fl_number').text(flat.flNumber);
     label.find('.fl_area').text(flat.flArea);
-    $('.flatSlider').slick('slickGoTo', flat.flNumber);
 
-  }); // end click event function
+  }); // end mouseenter event function
+
+  $('.flat_area').on('click', function(event) {
+    event.preventDefault();
+    $('.flatSlider').slick('slickGoTo', $(this).attr('fl-number'));
+  }); // end mouseenter event function
+
+
+
+
 
 
   $('.backTo').on('click', function() {
