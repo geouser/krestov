@@ -3,8 +3,10 @@
 #   Main JS for ____________   #
 #############################
 */
-
 jQuery(document).ready(function($) {
+
+$('body').delay(2000).css('opacity', '1');
+
 
   var responsiveValue = 1201;
 // OnePage scroll

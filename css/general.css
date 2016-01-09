@@ -255,6 +255,7 @@ body, .onepage-wrapper, html            {    display: block;
                                         {    display: none }
 body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html
                                         {    position: inherit }
+
 /*---------------------------------------------------------------*/
 /*------------------------- Navigation --------------------------*/
 /*---------------------------------------------------------------*/
@@ -1388,3 +1389,4 @@ button.mfp-arrow.mfp-arrow-right  {background-image: url(data:image/png;base64,i
 
 
 
+body {opacity: 0;}
