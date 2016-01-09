@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 
   $('.next_slide').on('click', function(event) {
     event.preventDefault();
-    $('.one_page').moveDown();
+    $(".fullpage").moveDown();
   });
 
 
@@ -55,13 +55,13 @@ jQuery(document).ready(function($) {
       if ( $(window).width() >= responsiveValue) {
         $('.nav a').removeClass('active');
         $(this).addClass('active');
-        $('.one_page').moveTo( $(this).attr('index') );
+        $(".fullpage").moveTo( $(this).attr('index') );
       }
 
     }); 
   }; // end navigate
 
-  //Navigate();
+  Navigate();
 
 
 
