@@ -65,6 +65,17 @@ jQuery(document).ready(function($) {
 
 
 
+// Top menu functions 
+  $(function(){
+    $('.mobile_menu').on('click', function(event) {
+      event.preventDefault();
+      $('.navigation').toggleClass('active');
+      $(this).toggleClass('active').siblings('ul').toggleClass('active');
+    });
+  });
+
+  
+
 // magnific popup
   $('.magnific').magnificPopup({
     type: 'inline',
@@ -151,7 +162,7 @@ jQuery(document).ready(function($) {
 
 
 // floor information functions 
-  $('.flat_area').on('click', function(event) {
+  $('.flat_area').on('mouseenter touch', function(event) {
     event.preventDefault();
     $(this).attr('class', 'active flat_area').siblings().attr('class', 'flat_area');
     var label = $(this).parent().parent().siblings('.top-label');
@@ -162,9 +173,17 @@ jQuery(document).ready(function($) {
 
     label.find('.fl_number').text(flat.flNumber);
     label.find('.fl_area').text(flat.flArea);
-    $('.flatSlider').slick('slickGoTo', flat.flNumber);
 
-  }); // end click event function
+  }); // end mouseenter event function
+
+  $('.flat_area').on('click', function(event) {
+    event.preventDefault();
+    $('.flatSlider').slick('slickGoTo', $(this).attr('fl-number'));
+  }); // end mouseenter event function
+
+
+
+
 
 
   $('.backTo').on('click', function() {
