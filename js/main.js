@@ -257,7 +257,7 @@ function initialize() {
             icon: markerImage,
             position: mapCenter, 
             map: map,
-            title: "HOVARD"
+            title: "krestov"
           });
 
     };
@@ -275,8 +275,7 @@ function initialize() {
   });
 }
 
-    
-initialize();
+   initialize()
 
 
 $('.gallery-link').on('click', function () {
